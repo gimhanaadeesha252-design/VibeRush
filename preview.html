@@ -1,0 +1,20 @@
+<script>
+function likePost(btn) {
+    let span = btn.querySelector("span");
+    let count = parseInt(span.innerText);
+    count++;
+    span.innerText = count;
+}
+
+function sharePost() {
+    if (navigator.share) {
+        navigator.share({
+            title: "VibeRush",
+            text: "Check this out!",
+            url: window.location.href
+        });
+    } else {
+        alert("Copy this link: " + window.location.href);
+    }
+}
+</script>
